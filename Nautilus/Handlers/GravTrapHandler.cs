@@ -22,4 +22,13 @@ public static class GravTrapHandler
     {
         _customTechTypes.Add(techType);
     }
+    
+    /// <summary>
+    /// Removes the given TechType from the collection of custom inclusions for the Grav Trap. 
+    /// </summary>
+    /// <param name="techType">The TechType to remove, which must have been previously registered.</param>
+    public static void RemoveAffectedTechType(TechType techType)
+    {
+        _customTechTypes.Remove(techType);
+    }
 }
