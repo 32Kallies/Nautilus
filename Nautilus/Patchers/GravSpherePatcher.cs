@@ -4,11 +4,11 @@ using UnityEngine;
 
 namespace Nautilus.Patchers;
 
-internal static class GravTrapPatcher
+internal static class GravSpherePatcher
 {
     internal static void Patch(Harmony harmony)
     {
-        harmony.PatchAll(typeof(GravTrapPatcher));
+        harmony.PatchAll(typeof(GravSpherePatcher));
     }
     
     [HarmonyPostfix]
@@ -19,7 +19,7 @@ internal static class GravTrapPatcher
         if (__result == true) return;
         
         var techType = CraftData.GetTechType(obj);
-        bool isCustomInclusion = GravTrapHandler.IsValidCustomGravTrapTarget(techType);
+        bool isCustomInclusion = GravSphereHandler.IsValidCustomGravTrapTarget(techType);
 
         if (!isCustomInclusion) return;
         

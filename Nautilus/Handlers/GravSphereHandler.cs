@@ -5,7 +5,7 @@ namespace Nautilus.Handlers;
 /// <summary>
 /// Allows registering objects to be affected by the Grav Trap.
 /// </summary>
-public static class GravTrapHandler
+public static class GravSphereHandler
 {
     private static readonly HashSet<TechType> _customTechTypes = new();
     
