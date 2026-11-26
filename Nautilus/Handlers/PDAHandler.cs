@@ -47,10 +47,10 @@ public static class PDAHandler
             fragmentCount = 1;
         }
 
-        PDAScannerPatcher.FragmentCount[techType] = fragmentCount;
+        PDAPatcher.FragmentCount[techType] = fragmentCount;
         
         if (GetShouldReinitialize())
-            PDAScannerPatcher.InitializePostfix();
+            PDAPatcher.InitializePostfix();
     }
 
     /// <summary>
@@ -65,10 +65,10 @@ public static class PDAHandler
             scanTime = 1f;
         }
 
-        PDAScannerPatcher.FragmentScanTime[techType] = scanTime;
+        PDAPatcher.FragmentScanTime[techType] = scanTime;
         
         if(GetShouldReinitialize())
-            PDAScannerPatcher.InitializePostfix();
+            PDAPatcher.InitializePostfix();
     }
 
     /// <summary>
@@ -77,15 +77,15 @@ public static class PDAHandler
     /// <param name="entryData">The <see cref="PDAScanner.EntryData"/> of the entry. Must be populated when passed in.</param>
     public static void AddCustomScannerEntry(PDAScanner.EntryData entryData)
     {
-        if (PDAScannerPatcher.CustomEntryData.ContainsKey(entryData.key))
+        if (PDAPatcher.CustomEntryData.ContainsKey(entryData.key))
         {
             InternalLogger.Log($"{entryData.key} already has custom PDAScanner.EntryData. Replacing with latest.", LogLevel.Debug);
         }
 
-        PDAScannerPatcher.CustomEntryData[entryData.key] = entryData;
+        PDAPatcher.CustomEntryData[entryData.key] = entryData;
         
         if (GetShouldReinitialize())
-            PDAScannerPatcher.InitializePostfix();
+            PDAPatcher.InitializePostfix();
     }
 
     /// <summary>
